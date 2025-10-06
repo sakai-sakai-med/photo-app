@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>設備稼働状況モニター</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 style="font-size:2vw; padding:1vw;">設備稼働状況モニター</h2>
+    {% for item in data %}
+    <div class="equipment {{ item['設備'] }}">
+        <strong>設備:</strong> {{ item['設備'] }}<br>
+        <strong>時間:</strong> {{ item['時間'] }}<br>
+        <strong>現状:</strong> {{ item['現状'] }}<br>
+        <strong>生産数:</strong> {{ item['生産数'] }}
+    </div>
+    {% endfor %}
+</body>
+</html>
